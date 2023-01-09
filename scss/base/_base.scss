@@ -2,3 +2,8 @@ body {
     font-family: $main-font;
     margin: 0;
 }
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
