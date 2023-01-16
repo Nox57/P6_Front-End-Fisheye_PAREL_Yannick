@@ -2,44 +2,48 @@ function photographerFactory(data) {
     const { id, name, portrait, city, country, tagline, price } = data;
 
     const picture = `assets/photographers/${portrait}`;
-    const link = `photographer.html?id=${id}`;
 
     function getUserCardDOM() {
-        // const card = `
-        // <article>
-        //     <a href="${link}">
-        //         <img src="${picture}">
-        //         <h2>${name}</h2>
-        //     </a>
-        //     <p>${city}, ${country}</p>
-        //     <p>${tagline}</p>
-        //     <p>${price}</p>
-        // </article>
-        // `;
 
-        // return card;
+        const article = document.createElement('article');
 
-        let article = document.createElement('article');
+        // Photographer profile picture
         const img = document.createElement('img');
-        img.setAttribute("src", picture)
+        img.setAttribute("src", picture);
+        img.setAttribute("alt", "Photo de "+name);
+
+        // Photographer name
         const h2 = document.createElement('h2');
         h2.textContent = name;
-        // city & country
+
+
+        // Photographer location (city, country)
         const p_location = document.createElement("p");
         p_location.textContent = city+", "+country;
-        // tagline
+
+
+        // Photographer tagline
         const p_tagline = document.createElement("p");
         p_tagline.textContent = tagline;
-        // price
+
+        // Photographer price
         const p_price = document.createElement("p");
         p_price.textContent = price+"€/jour";
-        article.appendChild(img);
-        article.appendChild(h2);
+
+        // We add links on photographer profile picture and name
+        const link = document.createElement("a");
+        link.setAttribute("href", "photographer.html?id="+id);
+        link.appendChild(img);
+        link.appendChild(h2);
+        //console.log(link)
+
+        // We add elements to the article
+        article.appendChild(link);
         article.appendChild(p_location);
         article.appendChild(p_tagline);
         article.appendChild(p_price);
-        article.innerHTML = `<a href="${link}">${article.innerHTML}</a>`;
-        console.log(article)
+
+        //console.log(article)
         return (article);
     }
     return { name, picture, getUserCardDOM }
