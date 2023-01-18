@@ -16,17 +16,15 @@ function photographerFactory(data) {
         const h2 = document.createElement('h2');
         h2.textContent = name;
 
-
-        // Photographer location (city, country)
+        // Photographer location (city, country) -> transforer en span
         const p_location = document.createElement("p");
         p_location.textContent = city+", "+country;
-
 
         // Photographer tagline
         const p_tagline = document.createElement("p");
         p_tagline.textContent = tagline;
 
-        // Photographer price
+        // Photographer price -> transforer en span
         const p_price = document.createElement("p");
         p_price.textContent = price+"€/jour";
 
@@ -35,7 +33,6 @@ function photographerFactory(data) {
         link.setAttribute("href", "photographer.html?id="+id);
         link.appendChild(img);
         link.appendChild(h2);
-        //console.log(link)
 
         // We add elements to the article
         article.appendChild(link);
@@ -43,7 +40,6 @@ function photographerFactory(data) {
         article.appendChild(p_tagline);
         article.appendChild(p_price);
 
-        //console.log(article)
         return (article);
     }
     return { name, picture, getUserCardDOM }
