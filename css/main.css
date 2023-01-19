@@ -139,3 +139,32 @@ header h1 {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.wrapper_media_section {
+  margin: 100px;
+}
+.wrapper_media_section .media_section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 100px;
+}
+.wrapper_media_section .media_section article {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.wrapper_media_section .media_section article h2 {
+  color: #901C1C;
+}
+.wrapper_media_section .media_section article img {
+  width: 350px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.wrapper_media_section .media_section article .likes {
+  display: block;
+  text-align: right;
+  color: #901C1C;
+}

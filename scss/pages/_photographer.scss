@@ -20,3 +20,43 @@
     border-radius: 5px;
     cursor: pointer;
 }
+
+.wrapper_media_section {
+
+    margin: 100px;
+
+    .media_section {
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 100px;
+
+        article {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        
+            h2 {
+               
+                color: $color-secondary;
+
+            }
+
+            img {
+                width: 350px;
+                height: 300px;
+                object-fit: cover;
+                border-radius: 5px;
+            }
+
+            .likes {
+                display: block;
+                text-align: right;
+                color: $color-secondary
+            }
+
+        }
+
+    }
+}

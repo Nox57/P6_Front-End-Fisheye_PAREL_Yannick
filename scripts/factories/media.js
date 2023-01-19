@@ -16,17 +16,18 @@ function mediaFactory(photographer, data) {
             media.appendChild(thumb);
         }
         else if (video) {
-            const thumb = document.createElement("video");
+            const thumb = document.createElement("img");
             thumb.setAttribute("src", path+video)
             media.appendChild(thumb);
         }
 
         // Title
-        const title_span = document.createElement("span");
+        const title_span = document.createElement("h2");
         title_span.textContent = title;
 
         // Likes
         const likes_span = document.createElement("span");
+        likes_span.className = "likes";
         likes_span.textContent = likes;
 
         // We add elements to the article
