@@ -1,11 +1,58 @@
 #contact_modal {
     display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background: rgba(196, 196, 196, 0.4);
+
+    .modal {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
-.photograph-header {
+.photograph-header section {
     background-color: #FAFAFA;
-    height: 300px;
     margin: 0 100px;
+    padding: 50px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+        font-size: 64px;
+        font-weight: 400;
+        margin: 0px;
+        padding: 0px;
+        color: $color-primary;
+    }
+
+    span {
+        font-weight: 400;
+        font-size: 24px;
+        color: $color-secondary;
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 18px;
+        color: $color-secondary-bis;
+    }
+
+    img {
+        height: 200px;
+        width: 200px;
+        object-fit: cover;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
 }
 
 .contact_button {
@@ -33,30 +80,50 @@
         gap: 100px;
 
         article {
+
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
-        
-            h2 {
-               
-                color: $color-secondary;
-
-            }
-
-            img {
+ 
+            img, video {
                 width: 350px;
                 height: 300px;
                 object-fit: cover;
                 border-radius: 5px;
             }
+            div {
 
-            .likes {
-                display: block;
-                text-align: right;
-                color: $color-secondary
+                margin-top: 10px;
+
+                .media_title {
+                    display: block;
+                    float: left;
+                    width: 290px;
+                    color: $color-secondary;
+                    font-size: 24px;
+                    overflow: hidden;
+                    text-overflow: ellipsis; 
+                }
+
+                .media_likes {
+                    display: block;
+                    float: right;
+                    text-align: right;
+                    color: $color-secondary;
+                    font-size: 24px;
+
+                    i {
+                        margin-left: 10px;
+                    }
+                }
             }
-
         }
+
+        // Trick to avoid big gap with last element
+        // &:after {
+        //     content: "";
+        //     flex: auto;
+        // }
 
     }
 }

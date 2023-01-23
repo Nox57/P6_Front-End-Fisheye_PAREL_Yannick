@@ -1,7 +1,17 @@
-function photographerFactory(data) {
+function photographerFactory(data, type) {
     const { id, name, portrait, city, country, tagline, price } = data;
 
     const picture = `assets/photographers/${portrait}`;
+
+    if (type === "headerPhotographer") {
+        return { name, picture, getUserHeaderDOM };
+    }
+    else if (type === "Photographer"){
+        return { name, picture, getUserCardDOM };
+    }
+    else {
+        return "Type incorrect";
+    }
 
     function getUserCardDOM() {
 
@@ -42,5 +52,78 @@ function photographerFactory(data) {
 
         return (article);
     }
-    return { name, picture, getUserCardDOM }
+
+    function getUserHeaderDOM() {
+
+        const section = document.createElement('section');
+
+        const left = document.createElement('div');
+        left.classList = "photograph-header-informations"
+
+        // Photographer name
+        const h1 = document.createElement('h1');
+        h1.textContent = name;
+
+        // Photographer location (city, country)
+        const location = document.createElement("span");
+        location.textContent = city+", "+country;
+
+        // Photographer tagline
+        const p_tagline = document.createElement("p");
+        p_tagline.textContent = tagline;
+
+
+        const mid = document.createElement("div")
+        mid.classList = "photograph-header-contact"
+
+        // Contact modal button
+        const contact = document.createElement("button");
+        contact.classList = "contact_button";
+        contact.setAttribute("onclick", "displayModal()")
+        contact.textContent = "Contactez-moi";
+
+
+        const right = document.createElement("div")
+        right.classList = "photograph-header-picture"
+
+        // Photographer profile picture
+        const img = document.createElement('img');
+        img.setAttribute("src", picture);
+        img.setAttribute("alt", "Photo de "+name);
+
+
+
+
+
+        // Photographer price
+        //const p_price = document.createElement("span");
+        //p_price.textContent = price+"€ / jour";
+
+
+
+
+
+
+
+        // We add elements to the section
+        left.appendChild(h1);
+        left.appendChild(location);
+        left.appendChild(p_tagline);
+        section.appendChild(left);
+
+        mid.appendChild(contact);
+        section.appendChild(mid);
+
+        right.appendChild(img);
+        section.appendChild(right);
+
+
+
+
+
+       // section.appendChild(p_price);
+
+        return (section);
+    }
+    
 }
