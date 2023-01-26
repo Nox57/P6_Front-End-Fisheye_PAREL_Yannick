@@ -1,4 +1,5 @@
 const params = new URLSearchParams(document.location.search);
+var displayMediaAlreadyCalled = false;
 
 // If URL doesn't have photographer's id, we redirect user
 if (!params.has("id")) {
@@ -24,22 +25,12 @@ async function displayHeader(photographer) {
 
 async function displayMedia(photographer, medias) {
     const mediaSection = document.querySelector(".media_section");
-
-    //console.log(medias);
-
-    // Sort by popularity by default 
-    medias.sort(sortFunction);
-
-    function sortFunction(a, b) {
-        if (a["likes"] === b["likes"]) {
-            return 0;
-        }
-        else {
-            return (a["likes"] > b["likes"]) ? -1 : 1;
-        }
+    console.log(displayMediaAlreadyCalled)
+    // We sort by popularity by default
+    if (displayMediaAlreadyCalled === false) {
+        medias.sort((a, b) => b.likes - a.likes);
+        displayMediaAlreadyCalled = true;
     }
-
-    //console.log(medias);
 
     medias.forEach((media) => {
         const mediaModel = mediaFactory(photographer, media);
@@ -68,6 +59,7 @@ async function init() {
 
     displayHeader(photographer);
     displayMedia(firstname, medias);
+    filterMedia(medias, firstname);
 
 };
 

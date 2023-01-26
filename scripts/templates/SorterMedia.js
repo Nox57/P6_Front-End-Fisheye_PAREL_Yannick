@@ -1,10 +1,34 @@
-function FilterMedia() {
+function filterMedia(medias, firstname) {
+
+    const selectedSort = document.querySelector("#media-sorting");
+
+    selectedSort.addEventListener("change", (event) => {
+        if (event.target.value === "date") {
+            medias.sort(sortFunctionDate);
+            console.log(medias)
+        }
+        else if (event.target.value === "title") {
+            medias.sort(sortFunctionTitle);
+            console.log(medias)
+        }
+        else if (event.target.value === "popularity") {
+            medias.sort(sortFunctionPopularity);
+            console.log(medias)
+        }
+        else {
+            medias.sort(sortFunctionPopularity);
+            console.log(medias)
+        }
+        document.querySelector(".media_section").innerHTML = "";
+        return displayMedia(firstname, medias);
+    })
+
 
 }
 
 
 // Par popularité
-function sortFunction(a, b) {
+function sortFunctionPopularity(a, b) {
     if (a["likes"] === b["likes"]) {
         return 0;
     }
@@ -13,8 +37,8 @@ function sortFunction(a, b) {
     }
 }
 
-// Par Date (du plus récent au plus vieux)
-function sortFunction(a, b) {
+// Par date (du plus récent au plus vieux)
+function sortFunctionDate(a, b) {
     if (a["date"] === b["date"]) {
         return 0;
     }
@@ -24,7 +48,7 @@ function sortFunction(a, b) {
 }
 
 // Par titre (de A à Z)
-function sortFunction(a, b) {
+function sortFunctionTitle(a, b) {
     if (a["title"] === b["title"]) {
         return 0;
     }
