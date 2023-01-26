@@ -17,6 +17,14 @@
     <main id="main">
       <div class="photograph-header">
       </div>
+      <div class="media-sorting-wrapper">
+        <label for="media-sorting">Trier par</label>
+        <select name="media-sorting" id="media-sorting">
+            <option value="popularity">Popularité</option>
+            <option value="date">Date</option>
+            <option value="title">Titre</option>
+        </select>
+      </div>
       <div class="wrapper_media_section">
         <section class="media_section">
         </section>
@@ -30,8 +38,14 @@
         </header>
 				<form>
 					<div>
-						<label>Prénom</label>
-						<input />
+						<label for="firstname">Prénom</label>
+						<input type="text" name="firstname" id="firstname" required>
+            <label for="lastname">Nom</label>
+						<input type="text" name="lastname" id="lastname" required>
+            <label for="email">Email</label>
+						<input type="email" name="email" id="email" required>
+            <label for="message" required>Votre message</label>
+						<textarea id="message" name="message" required></textarea>
 					</div>
           <button class="contact_button">Envoyer</button>
 				</form>

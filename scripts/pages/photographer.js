@@ -25,6 +25,22 @@ async function displayHeader(photographer) {
 async function displayMedia(photographer, medias) {
     const mediaSection = document.querySelector(".media_section");
 
+    //console.log(medias);
+
+    // Sort by popularity by default 
+    medias.sort(sortFunction);
+
+    function sortFunction(a, b) {
+        if (a["likes"] === b["likes"]) {
+            return 0;
+        }
+        else {
+            return (a["likes"] > b["likes"]) ? -1 : 1;
+        }
+    }
+
+    //console.log(medias);
+
     medias.forEach((media) => {
         const mediaModel = mediaFactory(photographer, media);
         const mediaCardDOM = mediaModel.getMediaCardDOM();
@@ -49,9 +65,6 @@ async function init() {
     } 
 
     const medias = media.filter(m => id === m.photographerId);
-
-    console.log(firstname);
-    console.log(medias);
 
     displayHeader(photographer);
     displayMedia(firstname, medias);

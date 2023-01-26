@@ -68,6 +68,27 @@
     cursor: pointer;
 }
 
+.media-sorting-wrapper {
+
+    margin-left: 100px;
+
+    label {
+        font-weight: 700;
+        font-size: 18px;
+        padding-right: 40px;
+    }
+
+    select {
+        font-size: 18px;
+        font-weight: 700;
+        border-radius: 5px;
+        padding: 23px;
+        background: $bckgrd-color-primary;
+        color: white;
+        width: 170px;
+    }
+}
+
 .wrapper_media_section {
 
     margin: 100px;
@@ -77,7 +98,7 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        gap: 100px;
+        gap: 85px;
 
         article {
 
