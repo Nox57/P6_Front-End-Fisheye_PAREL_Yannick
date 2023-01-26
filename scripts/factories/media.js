@@ -3,8 +3,7 @@ function mediaFactory(photographer, data) {
     const path = `assets/photographers/${photographer}/`;
     const { id, likes, price, title, video, image, date} = data;
     
-    console.log(path);
-    console.log(data);
+    //console.log(data);
 
     function getMediaCardDOM() {
         const media = document.createElement("article");
