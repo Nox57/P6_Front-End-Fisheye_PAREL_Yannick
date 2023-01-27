@@ -193,6 +193,7 @@ header h1 {
 }
 
 .media-sorting-wrapper {
+  margin-top: 50px;
   margin-left: 100px;
 }
 .media-sorting-wrapper label {
@@ -211,7 +212,7 @@ header h1 {
 }
 
 .wrapper_media_section {
-  margin: 100px;
+  margin: 50px 100px;
 }
 .wrapper_media_section .media_section {
   display: flex;
@@ -229,6 +230,7 @@ header h1 {
   height: 300px;
   object-fit: cover;
   border-radius: 5px;
+  cursor: pointer;
 }
 .wrapper_media_section .media_section article div {
   margin-top: 10px;
@@ -236,7 +238,7 @@ header h1 {
 .wrapper_media_section .media_section article div .media_title {
   display: block;
   float: left;
-  width: 290px;
+  width: 270px;
   color: #901C1C;
   font-size: 24px;
   overflow: hidden;
@@ -251,4 +253,5 @@ header h1 {
 }
 .wrapper_media_section .media_section article div .media_likes i {
   margin-left: 10px;
+  cursor: pointer;
 }

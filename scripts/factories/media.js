@@ -33,6 +33,23 @@ function mediaFactory(photographer, data) {
         likes_span.className = "media_likes";
         likes_span.innerHTML = likes + "<i class='fa-solid fa-heart'></i>";
 
+        ///////////////////////////////////////////////////////////
+        let likes_counter = {
+            likes: likes,
+            liked: false,
+            like: function() {
+                this.likes += this.liked ? -1 : 1;
+                this.liked = !this.liked;
+            }
+        }
+
+        likes_span.addEventListener("click", (event) => {
+            likes_counter.like();
+            likes_span.innerHTML = likes_counter.likes + "<i class='fa-solid fa-heart'></i>";
+        });
+        ///////////////////////////////////////////////////////////
+
+
         // We add elements to the article
         title_container.appendChild(title_span);
         title_container.appendChild(likes_span);

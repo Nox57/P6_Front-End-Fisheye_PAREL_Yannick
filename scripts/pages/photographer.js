@@ -25,7 +25,7 @@ async function displayHeader(photographer) {
 
 async function displayMedia(photographer, medias) {
     const mediaSection = document.querySelector(".media_section");
-    console.log(displayMediaAlreadyCalled)
+    //console.log(displayMediaAlreadyCalled)
     // We sort by popularity by default
     if (displayMediaAlreadyCalled === false) {
         medias.sort((a, b) => b.likes - a.likes);

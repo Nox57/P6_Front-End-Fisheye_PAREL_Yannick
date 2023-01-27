@@ -70,6 +70,7 @@
 
 .media-sorting-wrapper {
 
+    margin-top: 50px;
     margin-left: 100px;
 
     label {
@@ -91,7 +92,7 @@
 
 .wrapper_media_section {
 
-    margin: 100px;
+    margin: 50px 100px;
 
     .media_section {
 
@@ -111,7 +112,9 @@
                 height: 300px;
                 object-fit: cover;
                 border-radius: 5px;
+                cursor: pointer;
             }
+
             div {
 
                 margin-top: 10px;
@@ -119,7 +122,7 @@
                 .media_title {
                     display: block;
                     float: left;
-                    width: 290px;
+                    width: 270px;
                     color: $color-secondary;
                     font-size: 24px;
                     overflow: hidden;
@@ -135,6 +138,7 @@
 
                     i {
                         margin-left: 10px;
+                        cursor: pointer;
                     }
                 }
             }
