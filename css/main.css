@@ -176,7 +176,6 @@ header h1 {
   width: 200px;
   object-fit: cover;
   border-radius: 50%;
-  margin-bottom: 20px;
 }
 
 .contact_button {
@@ -254,4 +253,34 @@ header h1 {
 .wrapper_media_section .media_section article div .media_likes i {
   margin-left: 10px;
   cursor: pointer;
+}
+.wrapper_media_section .media_section:after {
+  content: "";
+  flex: auto;
+}
+
+.photograph_sticky {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  margin-right: 40px;
+  width: 380px;
+  background-color: #DB8876;
+  border-radius: 5px 5px 0px 0px;
+}
+.photograph_sticky span {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 70px;
+}
+.photograph_sticky .photograph_sticky_total_likes {
+  padding-left: 30px;
+}
+.photograph_sticky i {
+  padding-left: 5px;
+}
+.photograph_sticky .photograph_sticky_price {
+  position: absolute;
+  right: 0px;
+  padding-right: 30px;
 }

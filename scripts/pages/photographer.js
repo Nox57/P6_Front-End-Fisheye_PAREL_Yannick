@@ -25,6 +25,9 @@ async function displayHeader(photographer) {
 
 async function displayMedia(photographer, medias) {
     const mediaSection = document.querySelector(".media_section");
+    const total_likes_section = document.querySelector(".photograph_sticky_total_likes");
+
+    let total_likes = 0;
     //console.log(displayMediaAlreadyCalled)
     // We sort by popularity by default
     if (displayMediaAlreadyCalled === false) {
@@ -33,10 +36,14 @@ async function displayMedia(photographer, medias) {
     }
 
     medias.forEach((media) => {
+        total_likes += media.likes; 
         const mediaModel = mediaFactory(photographer, media);
         const mediaCardDOM = mediaModel.getMediaCardDOM();
         mediaSection.appendChild(mediaCardDOM);
-    });  
+    });
+
+    total_likes_section.textContent = total_likes;
+
 }
 
 async function init() {

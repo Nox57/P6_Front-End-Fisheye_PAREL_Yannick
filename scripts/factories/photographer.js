@@ -95,10 +95,9 @@ function photographerFactory(data, type) {
 
 
 
-        // Photographer price
-        //const p_price = document.createElement("span");
-        //p_price.textContent = price+"€ / jour";
-
+        // Photographer price in sticky infos
+        const sticky_price = document.querySelector(".photograph_sticky_price");
+        sticky_price.textContent = price+"€ / jour";
 
 
 
