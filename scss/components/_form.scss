@@ -33,3 +33,11 @@ form textarea {
     resize: none;
     font-size: 36px;
 }
+
+.input_validated {
+    border: 3px solid #279e7a;
+}
+
+.input_error {
+    border: 3px solid #fe142f;
+}

@@ -45,6 +45,14 @@ form textarea {
   font-size: 36px;
 }
 
+.input_validated {
+  border: 3px solid #279e7a;
+}
+
+.input_error {
+  border: 3px solid #fe142f;
+}
+
 .modal {
   border-radius: 5px;
   background-color: #DB8876;
@@ -55,6 +63,7 @@ form textarea {
   justify-content: space-between;
   padding: 35px;
   margin: auto;
+  font-size: 36px;
 }
 .modal header {
   justify-content: space-between;

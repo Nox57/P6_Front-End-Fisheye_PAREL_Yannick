@@ -39,13 +39,32 @@ function mediaFactory(photographer, data) {
             liked: false,
             like: function() {
                 this.likes += this.liked ? -1 : 1;
+                this.total_likes += this.liked ? -1 : 1;
                 this.liked = !this.liked;
             }
         }
 
+
+
+
+        let total_likes_boolean = false;
+
+
+
         likes_span.addEventListener("click", (event) => {
+            let total_likes = document.querySelector(".photograph_sticky_total_likes");
+            if (total_likes_boolean === false) {
+                total_likes.innerHTML = parseInt(total_likes.innerHTML, 10) + 1;
+                total_likes_boolean = true;
+            }
+            else {
+                total_likes.innerHTML = parseInt(total_likes.innerHTML, 10) - 1;
+                total_likes_boolean = false;
+            }
+
             likes_counter.like();
             likes_span.innerHTML = likes_counter.likes + "<i class='fa-solid fa-heart'></i>";
+
         });
         ///////////////////////////////////////////////////////////
 
