@@ -1,27 +1,118 @@
-.modal {
-    border-radius: 5px;
-    background-color: #DB8876;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    padding: 35px;
-    margin: auto;
-    font-size: 36px;
+#contact_modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background: rgba(196, 196, 196, 0.4);
 
-    header {
+    .modal {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 5px;
+        background-color: #DB8876;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: space-between;
-        width: 100%;
+        padding: 35px;
+        margin: auto;
+        font-size: 36px;
 
-        img {
-            cursor: pointer;
+        header {
+            justify-content: space-between;
+            width: 100%;
+    
+            img {
+                cursor: pointer;
+            }
+    
+            h2 {
+                font-size: 64px;
+                font-weight: normal;
+                text-align: center;
+            }
+        }
+    }
+}
+
+#lightbox_modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    .modal {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 5px;
+        background-color: #ffffff;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        justify-content: space-between;
+        padding: 35px;
+        margin: auto;
+        font-size: 36px;
+
+        .prev i, .next i {
+            color: $color-secondary;
+        }
+        .prev {
+            margin-left: 120px;
+        }
+        .next {
+            margin-right: 120px;
         }
 
-        h2 {
-            font-size: 64px;
-            font-weight: normal;
-            text-align: center;
+        .close_modal {
+            position: fixed;
+            right: 50px;
+            top: 50px;
+        }
+
+        .modal_content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            max-width: 1200px;
+        }
+
+        .lightbox_slide {
+            display: none;
+
+            img {
+                max-width: 1050px;
+                max-height: 700px;
+            }
+
+            video {
+                max-width: 1050px;
+                max-height: 900px;
+            }
+
+            p {
+                color: $color-secondary;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 24px;
+                margin: 0px;
+            }
         }
     }
 }

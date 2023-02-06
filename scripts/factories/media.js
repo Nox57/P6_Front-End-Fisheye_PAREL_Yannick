@@ -1,32 +1,59 @@
-function mediaFactory(photographer, data) {
+function mediaFactory(photographer, data, nb) {
 
     const path = `assets/photographers/${photographer}/`;
     const { id, likes, price, title, video, image, date} = data;
-    
+    const nbOfMedia = nb;
     //console.log(data);
 
     function getMediaCardDOM() {
         const media = document.createElement("article");
+        const lightbox = document.querySelector(".modal-content");
+        const lightbox_div = document.createElement("div");
+        lightbox_div.setAttribute("class", "lightbox_slide");
 
         // Image || Video
         if (image) {
             const thumb = document.createElement("img");
             thumb.setAttribute("src", path+image);
+            thumb.addEventListener("click", () => {
+                currentSlide(nbOfMedia);
+                openLightboxModal();
+            });
             media.appendChild(thumb);
+
+            const lightbox_img = document.createElement("img");
+            lightbox_img.setAttribute("src", path+image);
+            lightbox_div.appendChild(lightbox_img);
         }
         else if (video) {
             const thumb = document.createElement("video");
             thumb.setAttribute("src", path+video);
             thumb.setAttribute("controls", "");
+            thumb.addEventListener("click", (e) => {
+                e.preventDefault();
+                currentSlide(nbOfMedia);
+                openLightboxModal(); 
+            })
             media.appendChild(thumb);
+
+            const lightbox_video = document.createElement("video");
+            lightbox_video.setAttribute("src", path+video);
+            lightbox_video.setAttribute("controls", "");
+            lightbox_div.appendChild(lightbox_video);
         }
 
         const title_container = document.createElement("div");
 
         // Title
         const title_span = document.createElement("span");
+        const title_lightbox = document.createElement("p");
         title_span.classList = "media_title"
         title_span.textContent = title;
+        title_lightbox.textContent = title;
+        title_span.addEventListener("click", (e) => {
+            currentSlide(nbOfMedia);
+            openLightboxModal();
+        })
 
         // Likes
         const likes_span = document.createElement("span");
@@ -73,6 +100,10 @@ function mediaFactory(photographer, data) {
         title_container.appendChild(title_span);
         title_container.appendChild(likes_span);
         media.appendChild(title_container);
+        // We add elements to the carrousel
+        lightbox_div.appendChild(title_lightbox);
+        lightbox.appendChild(lightbox_div);
+
 
         return media;
     }

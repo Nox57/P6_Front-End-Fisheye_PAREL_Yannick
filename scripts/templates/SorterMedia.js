@@ -20,6 +20,7 @@ function filterMedia(medias, firstname) {
             console.log(medias)
         }
         document.querySelector(".media_section").innerHTML = "";
+        document.querySelector(".modal-content").innerHTML = "";
         return displayMedia(firstname, medias);
     })
 
