@@ -44,7 +44,7 @@ function validate(form) {
 // We check if input firstname and lastname are valids
 function checkName() {
     // We check if it's firstname or lastname input
-    let name = this.id === "first" ? "prénom" : "nom";
+    let name = this.id === "firstname" ? "prénom" : "nom";
     // We check if the value is equal or greater than 2 characters & if the value is not null
     if (this.value.length >= 2 && this.value != null) {
         // We check with regex if there is no numbers [0-9] in the value
@@ -82,7 +82,7 @@ function checkMessage() {
         return true;
     }
     else {
-        display_error(this, "Votre message ne doit pas être vide.");
+        display_error(this, "Votre message doit contenir au moins 20 caractères.");
         return false;
     }
 }
@@ -90,15 +90,15 @@ function checkMessage() {
 // Displaying error messages
 function display_error(element, errorMessage) {
     element.classList.add("input_error");
-    //document.getElementById("infos-"+element.id).style.display = "block";
-    //document.getElementById("infos-"+element.id).classList.add("error_msg");
-    //document.getElementById("infos-"+element.id).textContent = errorMessage;
+    document.getElementById("infos-"+element.id).style.display = "block";
+    document.getElementById("infos-"+element.id).classList.add("error_msg");
+    document.getElementById("infos-"+element.id).textContent = errorMessage;
 }
 
 // Displaying valid inputs
 function display_valid(element) {
-    //document.getElementById("infos-"+element.id).textContent = "";
-    //document.getElementById("infos-"+element.id).style.display = "none";
+    document.getElementById("infos-"+element.id).textContent = "";
+    document.getElementById("infos-"+element.id).style.display = "none";
     element.classList.add("input_validated");
     element.classList.remove("input_error");
 }

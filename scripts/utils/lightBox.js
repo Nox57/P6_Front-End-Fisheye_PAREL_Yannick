@@ -1,20 +1,22 @@
 // Open the lightbox
 function openLightboxModal() {
     document.getElementById("lightbox_modal").style.display = "block";
+    //removing scrollbar
+    document.body.style.overflow = "hidden"; 
 }
   
 // Close the lightbox
 function closeLightboxModal() {
     document.getElementById("lightbox_modal").style.display = "none";
+    document.body.style.overflow = "auto"; 
 }
 
 var slideIndex = 0;
-showSlides(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
     showSlides(slideIndex += n);
-  }
+}
 
 // Thumbnail image controls
 function currentSlide(n) {

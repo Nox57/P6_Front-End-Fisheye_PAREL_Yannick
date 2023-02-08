@@ -41,3 +41,9 @@ form textarea {
 .input_error {
     border: 3px solid #fe142f;
 }
+
+#infos-lastname, #infos-firstname, #infos-email, #infos-message {
+    display: none;
+    font-size: 16px;
+    margin: 0px;
+} 
