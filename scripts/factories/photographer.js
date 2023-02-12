@@ -62,6 +62,7 @@ function photographerFactory(data, type) {
 
         // Photographer name
         const h1 = document.createElement('h1');
+        h1.setAttribute("id", "photograph-header-name");
         h1.textContent = name;
 
         // Photographer location (city, country)

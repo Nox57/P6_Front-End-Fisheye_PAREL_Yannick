@@ -15,6 +15,8 @@ function mediaFactory(photographer, data, nb) {
         if (image) {
             const thumb = document.createElement("img");
             thumb.setAttribute("src", path+image);
+            thumb.setAttribute("alt", title);
+            thumb.setAttribute("tabindex", "0");
             thumb.addEventListener("click", () => {
                 currentSlide(nbOfMedia);
                 openLightboxModal();
@@ -23,12 +25,13 @@ function mediaFactory(photographer, data, nb) {
 
             const lightbox_img = document.createElement("img");
             lightbox_img.setAttribute("src", path+image);
+            lightbox_img.setAttribute("alt", title)
             lightbox_div.appendChild(lightbox_img);
         }
         else if (video) {
             const thumb = document.createElement("video");
             thumb.setAttribute("src", path+video);
-            thumb.setAttribute("controls", "");
+            thumb.setAttribute("tabindex", "0");
             thumb.addEventListener("click", (e) => {
                 e.preventDefault();
                 currentSlide(nbOfMedia);

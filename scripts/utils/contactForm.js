@@ -4,15 +4,22 @@ const input_lastname = document.getElementById("lastname");
 const input_email = document.getElementById("email");
 const textarea_message = document.getElementById("message");
 const submitForm = document.querySelector("#modal-form");
+const titleForm = document.querySelector("#title_contact_modal");
 
 function displayModal() {
+    // We add the photographer's name in the modal's h2
+    const photographersName = document.querySelector("#photograph-header-name");
+    titleForm.innerHTML = "Contactez-moi<span>" + photographersName.textContent + "</span>";
+
     const modal = document.getElementById("contact_modal");
 	modal.style.display = "block";
+    document.body.style.overflow = "hidden";
 }
 
 function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
+    document.body.style.overflow = "auto";
 }
 
 // Inputs form events

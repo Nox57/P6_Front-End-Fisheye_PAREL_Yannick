@@ -4,14 +4,14 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 90px;
+    margin-left: 100px;
+    margin-right: 100px;
 
     .logo {
         height: 50px;
-        margin-left: 100px;
     }
 
     h1 {
-        color: $bckgrd-color-primary;
-        margin-right: 100px;
+        color: $color-secondary;
     }
 }

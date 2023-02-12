@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link href="css/main.css" rel="stylesheet" type="text/css">
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
@@ -14,12 +14,12 @@
         <img src="assets/images/logo.png" class="logo" alt="Page d'accueil Fisheye">
       </a>
     </header>
-    <main id="main">
+    <main id="main" role="main">
       <div class="photograph-header">
       </div>
       <div class="media-sorting-wrapper">
         <label for="media-sorting">Trier par</label>
-        <select name="media-sorting" id="media-sorting">
+        <select name="media-sorting" id="media-sorting" aria-label="Sélectionnez une option pour trier les médias">
             <option value="popularity">Popularité</option>
             <option value="date">Date</option>
             <option value="title">Titre</option>
@@ -35,11 +35,11 @@
         <span class="photograph_sticky_price"></span>
       </div>
     </main>
-    <div id="contact_modal">
+    <div id="contact_modal" aria-hidden="true" role="dialog">
 			<div class="modal">
 				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
+          <h2 id="title_contact_modal">Contactez-moi</h2>
+          <img src="assets/icons/close.svg" alt="Fermer la modal" onclick="closeModal()">
         </header>
 				<form name="send_message" action="photographer.html" id="modal-form" method="get">
 					<div>
@@ -52,7 +52,7 @@
             <label for="email">Email</label>
 						<input type="email" name="email" id="email" required>
             <div id="infos-email"></div>
-            <label for="message" required>Votre message</label>
+            <label for="message">Votre message</label>
 						<textarea id="message" name="message" required></textarea>
             <div id="infos-message"></div>
 					</div>
@@ -60,7 +60,7 @@
 				</form>
 			</div>
 		</div>
-    <div id="lightbox_modal">
+    <div id="lightbox_modal" aria-hidden="true" role="dialog">
 			<div class="modal">
         <div class="left">
           <a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-chevron-left"></i></a>
@@ -71,7 +71,7 @@
             <a class="next" onclick="plusSlides(1)"><i class="fa-solid fa-chevron-right"></i></a>
         </div>
         <div class="close_modal">
-          <img src="assets/icons/close_lightbox.svg" onclick="closeLightboxModal()" />
+          <img src="assets/icons/close_lightbox.svg" alt="Fermer la modal" onclick="closeLightboxModal()">
         </div>
       </div>
     </div>
@@ -79,7 +79,7 @@
     <script src="scripts/factories/media.js"></script>
     <script src="scripts/templates/SorterMedia.js"></script>
     <script src="scripts/pages/photographer.js"></script>
-    <script src="scripts/utils/contactForm.js"></script>
     <script src="scripts/utils/lightBox.js"></script>
+    <script src="scripts/utils/contactForm.js"></script>
   </body>
 </html>

@@ -10,6 +10,7 @@ a {
 }
 
 form {
+  margin-top: 20px;
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -18,7 +19,7 @@ form {
 
 form label {
   color: #312E2E;
-  font-size: 36px;
+  font-size: 30px;
 }
 
 form div {
@@ -31,10 +32,10 @@ form div {
 
 form input {
   width: 100%;
-  height: 68px;
+  height: 58px;
   border: none;
   border-radius: 5px;
-  font-size: 36px;
+  font-size: 30px;
 }
 
 form textarea {
@@ -46,11 +47,11 @@ form textarea {
 }
 
 .input_validated {
-  border: 3px solid #279e7a;
+  border: 4px solid #0D5928;
 }
 
 .input_error {
-  border: 3px solid #fe142f;
+  border: 4px solid #9C0D24;
 }
 
 #infos-lastname, #infos-firstname, #infos-email, #infos-message {
@@ -91,12 +92,17 @@ form textarea {
   width: 100%;
 }
 #contact_modal .modal header img {
+  position: relative;
+  top: -36px;
   cursor: pointer;
 }
 #contact_modal .modal header h2 {
-  font-size: 64px;
-  font-weight: normal;
-  text-align: center;
+  font-weight: 400;
+  font-size: 54px;
+  text-align: left;
+}
+#contact_modal .modal header h2 span {
+  display: block;
 }
 
 #lightbox_modal {
@@ -120,7 +126,7 @@ form textarea {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 36px;
+  font-size: 54px;
 }
 #lightbox_modal .modal .prev i, #lightbox_modal .modal .next i {
   color: #901C1C;
@@ -169,14 +175,14 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 90px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 header .logo {
   height: 50px;
-  margin-left: 100px;
 }
 header h1 {
   color: #901C1C;
-  margin-right: 100px;
 }
 
 .photographer_section {
@@ -265,6 +271,10 @@ header h1 {
   background-color: #901C1C;
   border-radius: 5px;
   cursor: pointer;
+}
+.contact_button:hover, .contact_button:focus {
+  background-color: #DB8876;
+  color: #000000;
 }
 
 .media-sorting-wrapper {

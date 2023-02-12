@@ -30,13 +30,19 @@
             width: 100%;
     
             img {
+                position: relative;
+                top: -36px;
                 cursor: pointer;
             }
     
             h2 {
-                font-size: 64px;
-                font-weight: normal;
-                text-align: center;
+                font-weight: 400;
+                font-size: 54px;
+                text-align: left;
+                
+                span {
+                    display:block;
+                }
             }
         }
     }
@@ -63,7 +69,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        font-size: 36px;
+        font-size: 54px;
 
         .prev i, .next i {
             color: $color-secondary;
