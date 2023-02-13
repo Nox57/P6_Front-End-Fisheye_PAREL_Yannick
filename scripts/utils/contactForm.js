@@ -14,6 +14,13 @@ function displayModal() {
     const modal = document.getElementById("contact_modal");
 	modal.style.display = "block";
     document.body.style.overflow = "hidden";
+
+    document.addEventListener('keydown', function eventHandler(e) {
+        if (e.key === "Escape") {
+            closeModal();
+            document.removeEventListener('keydown', eventHandler);
+        }
+    });
 }
 
 function closeModal() {

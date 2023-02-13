@@ -91,7 +91,7 @@ form textarea {
   justify-content: space-between;
   width: 100%;
 }
-#contact_modal .modal header img {
+#contact_modal .modal header a {
   position: relative;
   top: -36px;
   cursor: pointer;

@@ -2,7 +2,20 @@
 function openLightboxModal() {
     document.getElementById("lightbox_modal").style.display = "block";
     //removing scrollbar
-    document.body.style.overflow = "hidden"; 
+    document.body.style.overflow = "hidden";
+
+    document.addEventListener('keydown', function eventHandler(e) {
+        if (e.key === "Escape") {
+            closeLightboxModal();
+            document.removeEventListener('keydown', eventHandler);
+        }
+        else if (e.key === "ArrowLeft") {
+            plusSlides(-1);
+        }
+        else if (e.key === "ArrowRight") {
+            plusSlides(1);
+        }
+    });
 }
   
 // Close the lightbox

@@ -39,39 +39,41 @@
 			<div class="modal">
 				<header>
           <h2 id="title_contact_modal">Contactez-moi</h2>
-          <img src="assets/icons/close.svg" alt="Fermer la modal" onclick="closeModal()">
+          <a href="#" aria-labe="Fermer la modal" onclick="closeModal()">
+            <img src="assets/icons/close.svg" alt="Fermer la modal">
+          </a>
         </header>
 				<form name="send_message" action="photographer.html" id="modal-form" method="get">
 					<div>
 						<label for="firstname">Prénom</label>
-						<input type="text" name="firstname" id="firstname" required>
+						<input type="text" name="firstname" id="firstname" aria-describedby="infos-firstname" required>
             <div id="infos-firstname"></div>
             <label for="lastname">Nom</label>
-						<input type="text" name="lastname" id="lastname" required>
+						<input type="text" name="lastname" id="lastname" aria-describedby="infos-lastname" required>
             <div id="infos-lastname"></div>
             <label for="email">Email</label>
-						<input type="email" name="email" id="email" required>
+						<input type="email" name="email" id="email" aria-describedby="infos-email" required>
             <div id="infos-email"></div>
             <label for="message">Votre message</label>
-						<textarea id="message" name="message" required></textarea>
+						<textarea id="message" name="message" aria-describedby="infos-message" required></textarea>
             <div id="infos-message"></div>
 					</div>
-          <button class="contact_button" type="submit">Envoyer</button>
+          <button class="contact_button" type="submit" aria-label="Envoyer votre message au photographe">Envoyer</button>
 				</form>
 			</div>
 		</div>
-    <div id="lightbox_modal" aria-hidden="true" role="dialog">
+    <div id="lightbox_modal" aria-hidden="false" role="dialog">
 			<div class="modal">
         <div class="left">
-          <a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-chevron-left"></i></a>
+          <a href="#" class="prev" aria-label="Média précedent" onclick="plusSlides(-1)"><i class="fa-solid fa-chevron-left"></i></a>
         </div>
         <div class="modal-content">
         </div>
         <div class="right">
-            <a class="next" onclick="plusSlides(1)"><i class="fa-solid fa-chevron-right"></i></a>
+            <a href="#" class="next" aria-label="Média suivant" onclick="plusSlides(1)"><i class="fa-solid fa-chevron-right"></i></a>
         </div>
         <div class="close_modal">
-          <img src="assets/icons/close_lightbox.svg" alt="Fermer la modal" onclick="closeLightboxModal()">
+          <a href="#" aria-label="Fermer la lightbox" onclick="closeLightboxModal()"><img src="assets/icons/close_lightbox.svg" alt="Fermer la modal"></a>
         </div>
       </div>
     </div>
