@@ -45,7 +45,7 @@ function validate(form) {
     if (checkName.call(input_firstname) && checkName.call(input_lastname) && checkEmail.call(input_email) && checkMessage.call(textarea_message)) {
         let formValidated = document.querySelector(".modal");
         formValidated.innerHTML = "<p class='formValidated'>Votre message a bien été envoyé au photographe.<br><br>Il vous recontactera très rapidement.</p>";
-        formValidated.innerHTML += "<p><input class='contact_button' type='submit' value='Fermer' onclick='closeModal()'></p>";
+        formValidated.innerHTML += "<p><input class='send_message_button' type='submit' value='Fermer' onclick='closeModal()'></p>";
     }
     else {
         checkName.call(input_firstname);
