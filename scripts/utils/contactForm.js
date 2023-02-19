@@ -11,10 +11,19 @@ function displayModal() {
     const photographersName = document.querySelector("#photograph-header-name");
     titleForm.innerHTML = "Contactez-moi<span>" + photographersName.textContent + "</span>";
 
+    const main = document.querySelector("#main");
+    console.log(main);
+    main.setAttribute("aria-hidden", "true");
+    console.log(main);
+
+    // We display the modal
     const modal = document.getElementById("contact_modal");
 	modal.style.display = "block";
     document.body.style.overflow = "hidden";
+    //We add the focus on the modal
+    document.getElementById("contact_modal").focus();
 
+    // We listen to the esc key
     document.addEventListener('keydown', function eventHandler(e) {
         if (e.key === "Escape") {
             closeModal();

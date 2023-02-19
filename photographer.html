@@ -9,12 +9,14 @@
     <title>Fisheye - photographe </title>
   </head>
   <body>
+
     <header>
       <a href="index.html">
         <img src="assets/images/logo.png" class="logo" alt="Page d'accueil Fisheye">
       </a>
     </header>
-    <main id="main" role="main">
+
+    <main id="main" role="main" aria-hidden="false">
       <div class="photograph-header">
       </div>
       <div class="media-sorting-wrapper">
@@ -35,7 +37,8 @@
         <span class="photograph_sticky_price"></span>
       </div>
     </main>
-    <div id="contact_modal" aria-hidden="true" role="dialog">
+
+    <div id="contact_modal" aria-hidden="true" aria-modal="true" tabindex="0" role="dialog">
 			<div class="modal">
 				<header>
           <h2 id="title_contact_modal">Contactez-moi</h2>
@@ -62,7 +65,7 @@
 				</form>
 			</div>
 		</div>
-    <div id="lightbox_modal" aria-hidden="false" role="dialog">
+    <div id="lightbox_modal" aria-hidden="true" aria-modal="true" tabindex="0" role="dialog">
 			<div class="modal">
         <div class="left">
           <a href="#" class="prev" aria-label="Média précedent" onclick="plusSlides(-1)"><i class="fa-solid fa-chevron-left"></i></a>

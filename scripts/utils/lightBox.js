@@ -1,8 +1,12 @@
 // Open the lightbox
 function openLightboxModal() {
+
     document.getElementById("lightbox_modal").style.display = "block";
-    //removing scrollbar
+    // Removing scrollbar
     document.body.style.overflow = "hidden";
+
+    //We add the focus on the modal
+    document.getElementById("lightbox_modal").focus();
 
     document.addEventListener('keydown', function eventHandler(e) {
         if (e.key === "Escape") {
