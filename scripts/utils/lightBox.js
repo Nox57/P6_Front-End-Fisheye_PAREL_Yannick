@@ -5,9 +5,13 @@ function openLightboxModal() {
     // Removing scrollbar
     document.body.style.overflow = "hidden";
 
-    //We add the focus on the modal
+    const main = document.querySelector("#main");
+    main.setAttribute("aria-hidden", "true");
+
+    // We add the focus on the modal
     document.getElementById("lightbox_modal").focus();
 
+    // We listen escape, arrow left and arrow right to navigate in the lightbox / close lightbox
     document.addEventListener('keydown', function eventHandler(e) {
         if (e.key === "Escape") {
             closeLightboxModal();
@@ -26,9 +30,12 @@ function openLightboxModal() {
 function closeLightboxModal() {
     document.getElementById("lightbox_modal").style.display = "none";
     document.body.style.overflow = "auto"; 
+
+    const main = document.querySelector("#main");
+    main.setAttribute("aria-hidden", "false");
 }
 
-var slideIndex = 0;
+let slideIndex = 0;
 
 // Next/previous controls
 function plusSlides(n) {

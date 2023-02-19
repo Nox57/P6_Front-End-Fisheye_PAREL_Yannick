@@ -1,9 +1,8 @@
 function mediaFactory(photographer, data, nb) {
 
     const path = `assets/photographers/${photographer}/`;
-    const { id, likes, price, title, video, image, date} = data;
+    const { likes, title, video, image } = data;
     const nbOfMedia = nb;
-    //console.log(data);
 
     function getMediaCardDOM() {
         const media = document.createElement("article");
@@ -70,7 +69,7 @@ function mediaFactory(photographer, data, nb) {
         likes_span.className = "media_likes";
         likes_span.innerHTML = likes + "<i class='fa-solid fa-heart'></i>";
 
-        ///////////////////////////////////////////////////////////
+        // Likes counter
         let likes_counter = {
             likes: likes,
             liked: false,
@@ -81,12 +80,7 @@ function mediaFactory(photographer, data, nb) {
             }
         }
 
-
-
-
         let total_likes_boolean = false;
-
-
 
         likes_link.addEventListener("click", (event) => {
             event.preventDefault();
@@ -104,8 +98,6 @@ function mediaFactory(photographer, data, nb) {
             likes_span.innerHTML = likes_counter.likes + "<i class='fa-solid fa-heart'></i>";
 
         });
-        ///////////////////////////////////////////////////////////
-
 
         // We add elements to the article
         title_container.appendChild(title_link);
@@ -113,10 +105,9 @@ function mediaFactory(photographer, data, nb) {
         title_container.appendChild(likes_link);
         likes_link.appendChild(likes_span);
         media.appendChild(title_container);
-        // We add elements to the carrousel
+        // We add elements to the lightbox
         lightbox_div.appendChild(title_lightbox);
         lightbox.appendChild(lightbox_div);
-
 
         return media;
     }

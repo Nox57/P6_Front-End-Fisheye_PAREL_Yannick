@@ -12,15 +12,13 @@ function displayModal() {
     titleForm.innerHTML = "Contactez-moi<span>" + photographersName.textContent + "</span>";
 
     const main = document.querySelector("#main");
-    console.log(main);
     main.setAttribute("aria-hidden", "true");
-    console.log(main);
 
     // We display the modal
     const modal = document.getElementById("contact_modal");
 	modal.style.display = "block";
     document.body.style.overflow = "hidden";
-    //We add the focus on the modal
+    // We add the focus on the modal
     document.getElementById("contact_modal").focus();
 
     // We listen to the esc key
@@ -34,8 +32,10 @@ function displayModal() {
 
 function closeModal() {
     const modal = document.getElementById("contact_modal");
+    const main = document.querySelector("#main");
     modal.style.display = "none";
     document.body.style.overflow = "auto";
+    main.setAttribute("aria-hidden", "false");
 }
 
 // Inputs form events
@@ -55,6 +55,12 @@ function validate(form) {
         let formValidated = document.querySelector(".modal");
         formValidated.innerHTML = "<p class='formValidated'>Votre message a bien été envoyé au photographe.<br><br>Il vous recontactera très rapidement.</p>";
         formValidated.innerHTML += "<p><input class='send_message_button' type='submit' value='Fermer' onclick='closeModal()'></p>";
+        console.log({
+            firstname: input_firstname.value,
+            lastname: input_lastname.value,
+            email: input_email.value,
+            message: textarea_message.value
+        });
     }
     else {
         checkName.call(input_firstname);

@@ -5,30 +5,24 @@ function filterMedia(medias, firstname) {
     selectedSort.addEventListener("change", (event) => {
         if (event.target.value === "date") {
             medias.sort(sortFunctionDate);
-            console.log(medias)
         }
         else if (event.target.value === "title") {
             medias.sort(sortFunctionTitle);
-            console.log(medias)
         }
         else if (event.target.value === "popularity") {
             medias.sort(sortFunctionPopularity);
-            console.log(medias)
         }
         else {
             medias.sort(sortFunctionPopularity);
-            console.log(medias)
         }
         document.querySelector(".media_section").innerHTML = "";
         document.querySelector(".modal-content").innerHTML = "";
         return displayMedia(firstname, medias);
     })
-
-
 }
 
 
-// Par popularité
+// By popularity
 function sortFunctionPopularity(a, b) {
     if (a["likes"] === b["likes"]) {
         return 0;
@@ -38,7 +32,7 @@ function sortFunctionPopularity(a, b) {
     }
 }
 
-// Par date (du plus récent au plus vieux)
+// By date
 function sortFunctionDate(a, b) {
     if (a["date"] === b["date"]) {
         return 0;
@@ -48,7 +42,7 @@ function sortFunctionDate(a, b) {
     }
 }
 
-// Par titre (de A à Z)
+// By title
 function sortFunctionTitle(a, b) {
     if (a["title"] === b["title"]) {
         return 0;

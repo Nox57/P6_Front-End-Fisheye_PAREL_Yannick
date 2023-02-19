@@ -1,5 +1,6 @@
+// We keep the photographers's ID
 const params = new URLSearchParams(document.location.search);
-var displayMediaAlreadyCalled = false;
+let displayMediaAlreadyCalled = false;
 
 // If URL doesn't have photographer's id, we redirect user
 if (!params.has("id")) {
@@ -8,12 +9,9 @@ if (!params.has("id")) {
 
 const id = parseInt(params.get("id"));
 
-
 async function getPhotographers() {
-
         const response = await fetch("data/photographers.json");
         return await response.json();
-
 }
 
 async function displayHeader(photographer) {
@@ -29,7 +27,7 @@ async function displayMedia(photographer, medias) {
 
     let total_likes = 0;
     let nbMedia = 0;
-    //console.log(displayMediaAlreadyCalled)
+
     // We sort by popularity by default
     if (displayMediaAlreadyCalled === false) {
         medias.sort((a, b) => b.likes - a.likes);

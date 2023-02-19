@@ -83,7 +83,6 @@ function photographerFactory(data, type) {
         contact.setAttribute("onclick", "displayModal()")
         contact.textContent = "Contactez-moi";
 
-
         const right = document.createElement("div")
         right.classList = "photograph-header-picture"
 
@@ -92,18 +91,9 @@ function photographerFactory(data, type) {
         img.setAttribute("src", picture);
         img.setAttribute("alt", "Photo de "+name);
 
-
-
-
-
         // Photographer price in sticky infos
         const sticky_price = document.querySelector(".photograph_sticky_price");
         sticky_price.textContent = price+"€ / jour";
-
-
-
-
-
 
         // We add elements to the section
         left.appendChild(h1);
@@ -116,12 +106,6 @@ function photographerFactory(data, type) {
 
         right.appendChild(img);
         section.appendChild(right);
-
-
-
-
-
-       // section.appendChild(p_price);
 
         return (section);
     }
