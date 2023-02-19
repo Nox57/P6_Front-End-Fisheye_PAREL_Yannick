@@ -65,6 +65,7 @@ function mediaFactory(photographer, data, nb) {
         // Likes
         const likes_link = document.createElement("a");
         likes_link.setAttribute("href", "#")
+        likes_link.setAttribute("aria-label", "likes")
         const likes_span = document.createElement("span");
         likes_span.className = "media_likes";
         likes_span.innerHTML = likes + "<i class='fa-solid fa-heart'></i>";
