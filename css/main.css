@@ -143,14 +143,13 @@ form textarea {
   justify-content: space-between;
   font-size: 54px;
 }
-#lightbox_modal .modal .prev i, #lightbox_modal .modal .next i {
-  color: #901C1C;
-}
 #lightbox_modal .modal .prev {
   margin-left: 120px;
+  color: #901C1C;
 }
 #lightbox_modal .modal .next {
   margin-right: 120px;
+  color: #901C1C;
 }
 #lightbox_modal .modal .close_modal {
   position: fixed;
@@ -380,8 +379,9 @@ header h1 {
 .photograph_sticky .photograph_sticky_total_likes {
   padding-left: 30px;
 }
-.photograph_sticky i {
+.photograph_sticky .photograph_sticky_heart {
   padding-left: 5px;
+  font-weight: 900;
 }
 .photograph_sticky .photograph_sticky_price {
   position: absolute;

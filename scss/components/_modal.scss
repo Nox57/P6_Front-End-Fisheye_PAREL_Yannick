@@ -88,14 +88,13 @@
         justify-content: space-between;
         font-size: 54px;
 
-        .prev i, .next i {
-            color: $color-secondary;
-        }
         .prev {
             margin-left: 120px;
+            color: $color-secondary;
         }
         .next {
             margin-right: 120px;
+            color: $color-secondary;
         }
 
         .close_modal {
