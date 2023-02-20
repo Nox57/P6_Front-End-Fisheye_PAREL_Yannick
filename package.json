@@ -1,0 +1,23 @@
+{
+  "name": "p6_front-end-fisheye_parel_yannick",
+  "version": "1.0.0",
+  "description": "Projet 6 de la formation DAJR sur OpenClassrooms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nox57/P6_Front-End-Fisheye_PAREL_Yannick.git"
+  },
+  "author": "PAREL Yannick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nox57/P6_Front-End-Fisheye_PAREL_Yannick/issues"
+  },
+  "homepage": "https://github.com/Nox57/P6_Front-End-Fisheye_PAREL_Yannick#readme",
+  "devDependencies": {
+    "eslint": "^8.34.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
